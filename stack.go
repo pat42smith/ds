@@ -43,3 +43,10 @@ func (s Stack[T]) Empty() bool {
 func (s *Stack[T]) PushMany(ts ...T) {
 	s.items = append(s.items, ts...)
 }
+
+// Peek returns the same value as Pop, but does not remove it from the Stack.
+//
+// Peek panics when called on an empty Stack.
+func (s *Stack[T]) Peek() T {
+	return s.items[len(s.items)-1]
+}

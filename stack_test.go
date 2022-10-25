@@ -26,18 +26,21 @@ func TestThrees(t *testing.T) {
 		gotest.Expect(t, n/3+2, s.Len())
 		gotest.Require(t, !s.Empty())
 
+		gotest.Expect(t, n+1, s.Peek())
 		gotest.Expect(t, n+1, s.Pop())
 		gotest.Expect(t, n/3+1, s.Len())
 		gotest.Require(t, !s.Empty())
 	}
 
 	for n := 27; n >= 0; n -= 3 {
+		gotest.Expect(t, n, s.Peek())
 		gotest.Expect(t, n, s.Pop())
 	}
 
 	gotest.Expect(t, 0, s.Len())
 	gotest.Require(t, s.Empty())
 	gotest.MustPanic(t, func() { s.Pop() })
+	gotest.MustPanic(t, func() { s.Peek() })
 }
 
 func TestPushMany(t *testing.T) {
