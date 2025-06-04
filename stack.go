@@ -1,9 +1,6 @@
 // Copyright 2022 Patrick Smith
 // Use of this source code is subject to the MIT-style license in the LICENSE file.
 
-// Package ds will implement some basic data structures in Go.
-//
-// For now, only Stack is provided.
 package ds
 
 // A Stack is a simple last-in-first-out collection of items.
